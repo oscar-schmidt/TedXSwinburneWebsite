@@ -1,0 +1,476 @@
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--tedx-red);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    z-index: 10000;
+    mix-blend-mode: difference;
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    background: var(--tedx-red);
+    opacity: 0.3;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+/* Navigation */
+/* These styles are for a <nav> element, which is already handled by Tailwind in App.jsx */
+/* However, some specific classes like .logo .x and .nav-links might be used, */
+/* or specific animation like 'pulse' for the logo's 'x' */
+
+.logo .x { /* This is used in the original HTML for the 'X' in TEDx */
+    color: var(--tedx-red);
+    font-size: 30px; /* Adjust if Tailwind font sizes are preferred */
+    animation: pulse 2s infinite;
+}
+
+/* Specific nav-links styling if not fully covered by Tailwind, especially ::after pseudo-elements */
+/* The JSX uses Tailwind, but if these ::after effects are desired, they need to be here */
+/* For example, for a hover underline effect on nav links: */
+/*
+.nav-links a {
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--tedx-red);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+*/
+
+/* Hero Section */
+/* Many .hero styles are handled by Tailwind in App.jsx */
+/* .hero-bg and its @keyframes float might be custom if not replicated by Tailwind classes */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, var(--accent-purple) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--accent-blue) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, var(--tedx-red) 0%, transparent 50%);
+    opacity: 0.3;
+    filter: blur(100px);
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-20px, -20px) scale(1.05); }
+    66% { transform: translate(20px, -10px) scale(0.95); }
+}
+
+/* .hero-content fadeInUp animation */
+.hero-content {
+    /* animation: fadeInUp 1s ease; */ /* This is often handled by AOS or similar in React */
+    /* Tailwind classes handle text-align, z-index, padding */
+}
+
+/* .hero h1 gradient animation */
+/* The hero h1 in App.jsx uses Tailwind for gradient, but if a specific @keyframes gradient is desired: */
+/*
+.hero h1 {
+    animation: gradient 3s ease infinite;
+    background-size: 200% 200%;
+}
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+*/
+
+
+/* .cta-button shine effect */
+/* The App.jsx uses Tailwind for the button, this adds the ::before pseudo-element for shine */
+.cta-button { /* Ensure this class is on the button if this effect is desired */
+    position: relative;
+    overflow: hidden;
+}
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Floating particles */
+/* The App.jsx generates particles with inline styles. */
+/* If a global .particle class approach was used from original index.html: */
+/*
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--tedx-red);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: particle-float 20s infinite linear;
+}
+
+@keyframes particle-float {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+*/
+
+/* Section (Generic) */
+/* Mostly handled by Tailwind in App.jsx */
+/* Section h2 ::after element for underline */
+/*
+.section h2 {
+    position: relative;
+    display: inline-block;
+}
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--tedx-red);
+}
+*/
+/* The App.jsx implements similar dividers using Tailwind utility classes */
+
+
+/* Glass Card - used for About section cards in original HTML */
+/* App.jsx uses Tailwind for styling these, but if specific .glass-card class behavior is needed: */
+/*
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--tedx-red);
+    box-shadow: 0 20px 40px rgba(235, 0, 40, 0.2);
+}
+*/
+
+/* Speakers Section */
+/* Mostly handled by Tailwind in App.jsx */
+/* Speaker card ::before effect and hover transform from original HTML */
+/*
+.speaker-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.speaker-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, var(--tedx-red));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.speaker-card:hover::before {
+    opacity: 0.1;
+}
+.speaker-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+*/
+/* The App.jsx speaker cards have similar hover effects using Tailwind utilities. */
+
+
+/* Schedule Section */
+/* Timeline styles from original HTML */
+/* These are largely replicated with Tailwind in App.jsx, but if specific non-Tailwind effects are needed: */
+/*
+.schedule-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+.schedule-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    transform: translateX(0);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--tedx-red), var(--accent-blue));
+}
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 40px;
+}
+.timeline-content {
+    background: var(--glass-bg);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.timeline-content:hover {
+    transform: scale(1.02);
+    border-color: var(--tedx-red);
+}
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    background: var(--tedx-red);
+    border-radius: 50%;
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    transform: translateX(0);
+    box-shadow: 0 0 15px var(--tedx-red);
+}
+@media (min-width: 768px) {
+    .schedule-timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .timeline-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0;
+    }
+    .timeline-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-right: calc(5% + 20px);
+    }
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: calc(5% + 20px);
+    }
+    .timeline-content {
+        width: 45%;
+        padding: 30px;
+    }
+    .timeline-dot {
+        width: 20px;
+        height: 20px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+*/
+/* The App.jsx Schedule section aims to replicate this structure and appearance using Tailwind. */
+
+
+/* Footer */
+/* Social links hover effects from original HTML if not fully covered by Tailwind */
+/* App.jsx uses Tailwind for social links styling */
+/*
+.social-links a {
+    transition: all 0.3s ease;
+}
+.social-links a:hover {
+    background: var(--tedx-red);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(235, 0, 40, 0.4);
+}
+*/
+
+
+/* Animations */
+/* These are global keyframes. Ensure they don't conflict with Tailwind's animations if used. */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse { /* Used by .logo .x */
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Modal Animations (from App.jsx Tailwind classes like animate-fadeIn, animate-slideInUp) */
+/* If custom keyframes are needed for modals, they would go here. */
+/* For example, for the modals in App.jsx: */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUpCenter {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.scale-up-center {
+  animation: scaleUpCenter 0.3s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.3s ease-out forwards;
+}
+
+
+/* Responsive Adjustments */
+/* These specific responsive overrides from the original App.css may or may not be needed */
+/* if Tailwind's responsive prefixes (sm:, md:, lg:) are used effectively in App.jsx. */
+/* The primary one to keep is for the custom cursor. */
+@media (max-width: 768px) {
+    /* Hiding custom cursor on touch devices / smaller screens */
+    .cursor,
+    .cursor-follower {
+         display: none;
+    }
+
+    /* Original nav-links hiding logic, App.jsx handles mobile menu with JS and Tailwind */
+    /*
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 70%;
+        height: 100vh;
+        background: rgba(10,10,10,0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease-in-out;
+        padding-top: 60px;
+    }
+    .nav-links.active {
+        right: 0;
+    }
+    .nav-links a {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+    */
+    
+    /* Body no-scroll when mobile menu is open - handled by JS in App.jsx by adding/removing a class */
+    /* Add this if a specific .no-scroll class is toggled on body */
+    /*
+    body.no-scroll {
+        overflow: hidden;
+    }
+    */
+}
+
+/* Scrollbar styling for speaker modal (from App.jsx Tailwind classes like scrollbar-thin) */
+/* If more specific scrollbar styling is desired globally or for specific elements: */
+/*
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tedx-red) var(--dark-bg); 
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--tedx-red);
+  border-radius: 4px;
+  border: 2px solid var(--dark-bg);
+}
+*/
+/* The App.jsx uses Tailwind plugin for scrollbar, if that's set up, these might not be needed */
+/* If not using a Tailwind plugin, these classes can be defined here. */
+/* Assuming a scrollbar plugin is NOT YET installed for Tailwind, we can define basic styles */
+/* Apply these classes to elements that need custom scrollbars */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--tedx-red) rgba(0,0,0,0.1); /* thumb and track color */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px; /* For Webkit browsers */
+  height: 8px; /* For horizontal scrollbars */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1); /* Track color */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--tedx-red); /* Thumb color */
+  border-radius: 10px;
+  border: 2px solid rgba(0,0,0,0.1); /* Creates padding around thumb */
+}

@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add any custom global styles here, below the Tailwind directives */
+/* For example, if you want to ensure the body takes full height and has a default dark background like the original project: */
+body {
+  min-height: 100vh;
+  background-color: #0a0a0a; /* Or use a CSS variable defined in App.css or here */
+  color: #ffffff; /* Default text color */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* A common sans-serif stack */
+  overflow-x: hidden; /* Prevent horizontal scrollbars from rogue elements */
+}
+
+/* If you have a global root variable definition for colors, etc., from your original App.css, */
+/* it might be better to keep them in App.css if App.css is globally imported, or move them here. */
+/* For simplicity, ensure these variables are defined where they are used or globally if needed. */
+/* If the :root variables from the old App.css are meant to be global, they could go here: */
+:root {
+    --tedx-red: #EB0028;
+    --swinburne-red: #EE3124;
+    --dark-bg: #0a0a0a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-blue: #00D4FF;
+    --accent-purple: #7B61FF;
+}
