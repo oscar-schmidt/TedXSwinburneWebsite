@@ -245,7 +245,6 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Intersection Observer for animations
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -260,7 +259,6 @@ const App = () => {
       });
     }, observerOptions);
 
-    // Observe elements after a short delay to ensure they're rendered
     const timer = setTimeout(() => {
       document.querySelectorAll('.glass-card, .speaker-card, .timeline-content').forEach(el => {
         observer.observe(el);
