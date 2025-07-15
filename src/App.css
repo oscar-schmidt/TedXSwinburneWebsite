@@ -25,20 +25,15 @@
     z-index: 9999;
 }
 
-/* Navigation */
-/* These styles are for a <nav> element, which is already handled by Tailwind in App.jsx */
-/* However, some specific classes like .logo .x and .nav-links might be used, */
-/* or specific animation like 'pulse' for the logo's 'x' */
 
-.logo .x { /* This is used in the original HTML for the 'X' in TEDx */
+
+.logo .x {
     color: var(--tedx-red);
-    font-size: 30px; /* Adjust if Tailwind font sizes are preferred */
+    font-size: 30px;
     animation: pulse 2s infinite;
 }
 
-/* Specific nav-links styling if not fully covered by Tailwind, especially ::after pseudo-elements */
-/* The JSX uses Tailwind, but if these ::after effects are desired, they need to be here */
-/* For example, for a hover underline effect on nav links: */
+
 /*
 .nav-links a {
     position: relative;
@@ -58,9 +53,6 @@
 }
 */
 
-/* Hero Section */
-/* Many .hero styles are handled by Tailwind in App.jsx */
-/* .hero-bg and its @keyframes float might be custom if not replicated by Tailwind classes */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -87,24 +79,7 @@
     /* Tailwind classes handle text-align, z-index, padding */
 }
 
-/* .hero h1 gradient animation */
-/* The hero h1 in App.jsx uses Tailwind for gradient, but if a specific @keyframes gradient is desired: */
-/*
-.hero h1 {
-    animation: gradient 3s ease infinite;
-    background-size: 200% 200%;
-}
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-*/
-
-
-/* .cta-button shine effect */
-/* The App.jsx uses Tailwind for the button, this adds the ::before pseudo-element for shine */
-.cta-button { /* Ensure this class is on the button if this effect is desired */
+.cta-button { 
     position: relative;
     overflow: hidden;
 }
@@ -122,9 +97,6 @@
     left: 100%;
 }
 
-/* Floating particles */
-/* The App.jsx generates particles with inline styles. */
-/* If a global .particle class approach was used from original index.html: */
 /*
 .particles {
     position: absolute;
@@ -163,9 +135,7 @@
 }
 */
 
-/* Section (Generic) */
-/* Mostly handled by Tailwind in App.jsx */
-/* Section h2 ::after element for underline */
+
 /*
 .section h2 {
     position: relative;
@@ -182,11 +152,7 @@
     background: var(--tedx-red);
 }
 */
-/* The App.jsx implements similar dividers using Tailwind utility classes */
 
-
-/* Glass Card - used for About section cards in original HTML */
-/* App.jsx uses Tailwind for styling these, but if specific .glass-card class behavior is needed: */
 /*
 .glass-card {
     background: var(--glass-bg);
@@ -204,9 +170,7 @@
 }
 */
 
-/* Speakers Section */
-/* Mostly handled by Tailwind in App.jsx */
-/* Speaker card ::before effect and hover transform from original HTML */
+
 /*
 .speaker-card {
     position: relative;
@@ -231,12 +195,7 @@
     transform: translateY(-10px) scale(1.02);
 }
 */
-/* The App.jsx speaker cards have similar hover effects using Tailwind utilities. */
 
-
-/* Schedule Section */
-/* Timeline styles from original HTML */
-/* These are largely replicated with Tailwind in App.jsx, but if specific non-Tailwind effects are needed: */
 /*
 .schedule-timeline {
     position: relative;
@@ -313,12 +272,7 @@
     }
 }
 */
-/* The App.jsx Schedule section aims to replicate this structure and appearance using Tailwind. */
 
-
-/* Footer */
-/* Social links hover effects from original HTML if not fully covered by Tailwind */
-/* App.jsx uses Tailwind for social links styling */
 /*
 .social-links a {
     transition: all 0.3s ease;
@@ -330,9 +284,6 @@
 }
 */
 
-
-/* Animations */
-/* These are global keyframes. Ensure they don't conflict with Tailwind's animations if used. */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -353,9 +304,7 @@
     }
 }
 
-/* Modal Animations (from App.jsx Tailwind classes like animate-fadeIn, animate-slideInUp) */
-/* If custom keyframes are needed for modals, they would go here. */
-/* For example, for the modals in App.jsx: */
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -384,10 +333,6 @@
 }
 
 
-/* Responsive Adjustments */
-/* These specific responsive overrides from the original App.css may or may not be needed */
-/* if Tailwind's responsive prefixes (sm:, md:, lg:) are used effectively in App.jsx. */
-/* The primary one to keep is for the custom cursor. */
 @media (max-width: 768px) {
     /* Hiding custom cursor on touch devices / smaller screens */
     .cursor,
@@ -419,9 +364,7 @@
         margin: 15px 0;
     }
     */
-    
-    /* Body no-scroll when mobile menu is open - handled by JS in App.jsx by adding/removing a class */
-    /* Add this if a specific .no-scroll class is toggled on body */
+
     /*
     body.no-scroll {
         overflow: hidden;
@@ -429,8 +372,6 @@
     */
 }
 
-/* Scrollbar styling for speaker modal (from App.jsx Tailwind classes like scrollbar-thin) */
-/* If more specific scrollbar styling is desired globally or for specific elements: */
 /*
 .scrollbar-thin {
   scrollbar-width: thin;
@@ -451,10 +392,7 @@
   border: 2px solid var(--dark-bg);
 }
 */
-/* The App.jsx uses Tailwind plugin for scrollbar, if that's set up, these might not be needed */
-/* If not using a Tailwind plugin, these classes can be defined here. */
-/* Assuming a scrollbar plugin is NOT YET installed for Tailwind, we can define basic styles */
-/* Apply these classes to elements that need custom scrollbars */
+
 .scrollbar-thin {
   scrollbar-width: thin;
   scrollbar-color: var(--tedx-red) rgba(0,0,0,0.1); /* thumb and track color */
