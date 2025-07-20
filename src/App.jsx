@@ -12,7 +12,7 @@ const styles = `
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 20% 80%, #EB0028 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, #00D4FF 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #980e0eff 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, #FF4D6D 0%, transparent 50%);
     opacity: 0.3;
     filter: blur(100px);
@@ -455,7 +455,7 @@ const App = () => {
                 <span className="text-3xl font-bold text-red-500 group-hover:opacity-80 transition-opacity">
                   TEDx
                 </span>
-                <span className="text-2xl ml-1.5 font-light text-gray-200 group-hover:text-white transition-colors">Swinburne</span>
+                <span className="text-2xl ml-1.5 font-light text-gray-200 group-hover:text-white transition-colors">Swinburne University</span>
               </div>
               <span className="text-xs text-red-500 font-medium mt-0.5">x = independently organized TED event</span>
             </button>
@@ -558,7 +558,7 @@ const App = () => {
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             Join us for an extraordinary day of innovation, inspiration, and
-            transformation at TEDxSwinburne 2025. Explore the future, today.
+            transformation at TEDxSwinburne University 2025. Explore the future, today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center" data-aos="fade-up" data-aos-delay="300">
             <button
@@ -617,7 +617,7 @@ const App = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20" data-aos="fade-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              About <span className="text-red-500">TEDx</span>Swinburne
+              About <span className="text-red-500">TEDx</span>Swinburne University
             </h2>
             <div className="w-28 h-1.5 bg-red-500 mx-auto rounded-full" />
           </div>
@@ -965,7 +965,7 @@ const App = () => {
                 <span className="text-4xl font-bold text-red-500 group-hover:opacity-80 transition-opacity">
                   TEDx
                 </span>
-                <span className="text-3xl ml-1.5 font-light text-gray-200 group-hover:text-white transition-colors">Swinburne</span>
+                <span className="text-3xl ml-1.5 font-light text-gray-200 group-hover:text-white transition-colors">Swinburne University</span>
               </div>
               <span className="text-sm text-red-500 font-medium mt-1">x = independently organized TED event</span>
             </div>
